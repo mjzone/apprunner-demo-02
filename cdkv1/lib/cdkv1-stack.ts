@@ -8,7 +8,7 @@ export class Cdkv1Stack extends cdk.Stack {
     super(scope, id, props);
 
     new CfnService(this, "CfnService", {
-      serviceName: "myAppService",
+      serviceName: "my-app",
       sourceConfiguration: {
         authenticationConfiguration: {
           connectionArn: "arn:aws:apprunner:us-east-1:885121665536:connection/myGithubConnector/62d6d238275741019fade5ade59e3e0c"
@@ -19,8 +19,14 @@ export class Cdkv1Stack extends cdk.Stack {
           sourceCodeVersion: {
             type: "BRANCH",
             value: "main"
+          },
+          codeConfiguration: {
+            configurationSource: "REPOSITORY"
           }
         }
+      },
+      healthCheckConfiguration: {
+        path: "/health"
       }
     })
 
