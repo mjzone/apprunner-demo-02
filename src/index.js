@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 
 app.get("/", (req,res) => {
-    res.send("Hello from Enlear Academy!");
+    console.log("Serving a new request")
+    res.send("Hello World!");
 });
 
 app.get("/health", (req,res) => {
