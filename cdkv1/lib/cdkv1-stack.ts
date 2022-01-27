@@ -13,6 +13,7 @@ export class Cdkv1Stack extends cdk.Stack {
         authenticationConfiguration: {
           connectionArn: "arn:aws:apprunner:us-east-1:885121665536:connection/myGithubConnector/62d6d238275741019fade5ade59e3e0c"
         },
+        autoDeploymentsEnabled: true,
         codeRepository: {
           repositoryUrl: "https://github.com/mjzone/apprunner-demo-02",
           sourceCodeVersion: {
